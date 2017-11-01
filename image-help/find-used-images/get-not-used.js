@@ -6,8 +6,8 @@ const ImagesNotUsed = (function() {
     'use strict';
 
     const fs = require('fs');
-    const elfConfig = require('isit-code-calvert').elfConfig;
-    const elfLog = require('isit-code-calvert').elfLog('get-not-used');
+    const elfConfig = require('isit-code-means').elfConfig;
+    const elfLog = require('isit-code-means').elfLog('get-not-used');
     const mkdirp = require('mkdirp');
     const utils = require('../utilities');
     const getImagesUsed = require('./get-images-used');

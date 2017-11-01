@@ -5,7 +5,7 @@
  */
 
 const createMarkdown = require('../private/create-markdown');
-const config = require('isit-code-calvert').elfConfig;
+const config = require('isit-code-means').elfConfig;
 config.useLocalConfig = true;
 
 function runConfig(user, siteDirsOffset) {
