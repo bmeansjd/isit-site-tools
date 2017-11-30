@@ -4,3 +4,6 @@ module.exports.imageHelp = require('./image-help/index');
 module.exports.makeMarkdown = require('./image-help/index').makeMarkdown;
 module.exports.getNotUsed = require('./image-help/index').getNotUsed;
 module.exports.imagesTest = require('./image-help/runners/ImagesTest');
+exports.getPackageDescription = function() {
+    return "This is Brenda Means's package";
+}

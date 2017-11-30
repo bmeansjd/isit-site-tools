@@ -29,7 +29,7 @@ describe('Create directories for each day we took photos', function() {
         elfConfig.useLocalConfig = true;
         const spain = configurationSettings.getSelectedElvenImage('testImages');
         const picturePath = createDirectories.getPicturePath(spain);
-        expect(picturePath).toBe('/home/charlie/Git/writings/Tech/Markdown/testImages/');
+        expect(picturePath).toBe(process.env.home +'/Git/writings/Tech/Markdown/testImages/');
         //done();
     });
 
