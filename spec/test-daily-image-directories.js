@@ -12,6 +12,11 @@ describe('Create directories for each day we took photos', function() {
     const configurationSettings = require('../image-help/index').configSettings;
     const createDirectories = require('../image-help/index').createDirectories;
 
+    beforeEach(function() {
+        elfConfig.useLocalConfig = false;
+        elfConfig.forceReload();
+    });
+
     it('expects true to be true', function() {
         expect(true).toBe(true);
     });
@@ -25,11 +30,22 @@ describe('Create directories for each day we took photos', function() {
         done();
     });
 
+    it('expects to get be able to get test images', function() {
+        const testImages = configurationSettings.getSelectedElvenImage('testImages');
+        expect(testImages).toBeDefined();
+    });
+
     it('expects to get valid picture path', function() {
         elfConfig.useLocalConfig = true;
+<<<<<<< HEAD
         const spain = configurationSettings.getSelectedElvenImage('testImages');
         const picturePath = createDirectories.getPicturePath(spain);
         expect(picturePath).toBe(process.env.home +'/Git/writings/Tech/Markdown/testImages/');
+=======
+        const testImages = configurationSettings.getSelectedElvenImage('testImages');
+        const picturePath = createDirectories.getPicturePath(testImages);
+        expect(picturePath).toBe('/home/charlie/Git/writings/Tech/Markdown/testImages/');
+>>>>>>> 9eab0f559a25909fcc4236059a98c6408f8e9399
         //done();
     });
 
