@@ -33,6 +33,22 @@ function testExtension(extensionFilter, fileExtension) {
     }
 }
 
+walker.makePage = function(details, callback) {
+    'use strict';
+
+    details.callback = callback;
+    makePage.init();
+
+    // if we found nothing then return nothing
+    if (details.directories.length === 0) {
+        callback([],[])
+    } else {
+        details.directories.forEach(function(directory, index) {
+            makePage.run(directory, index, details);
+        });
+    }
+};
+
 walker.walkDirs = function(directoryToWalk, extensionFilter, mostRecentDate, callback) {
     'use strict';
     elfLog.nano('walker.walkDirs called');
@@ -114,6 +130,7 @@ walker.getDirectories = function(report) {
     });
 
 };
+/*
 
 walker.makePage = function(details, callback) {
     'use strict';
@@ -131,6 +148,9 @@ walker.makePage = function(details, callback) {
     }
 
 };
+*/
+
+
 
 walker();
 
